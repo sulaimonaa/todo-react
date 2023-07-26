@@ -34,6 +34,14 @@ const TodosLogic = () => {
         ])
     }
 
+    const editTaskById = (taskId) => {
+        const newTasks = tasks.map(task => {
+            if (task.id === taskId) {
+                console.log('Here');
+            }
+        })
+    }
+
     const toggleCompletedTaskById = (taskId) => {
         const newTasks = tasks.map(task => {
             if (task.id === taskId) {
@@ -59,6 +67,7 @@ const TodosLogic = () => {
             tasks={tasks}
             onComplete={toggleCompletedTaskById}
             onDelete={deleteTaskById}
+            onEdit={editTaskById}
         />
         </div>
     </>
